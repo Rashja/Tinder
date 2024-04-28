@@ -1,0 +1,128 @@
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 600px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.imageGenderWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputWrapper {
+  margin-top: 10px;
+  width: 100%;
+  flex: 1;
+}
+
+.detailContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  color: gray;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.btn__profile {
+  margin: 3rem auto;
+  width: 50%;
+  padding: 15px 0;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 10px;
+}
+.gridItem {
+  color: gray;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.interestsSelected {
+  background: linear-gradient(45deg, rgb(254, 48, 114), rgb(255, 89, 64));
+  color: white;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.genderLabel {
+  width: 100%;
+  color: gray;
+  font-weight: 700;
+  flex: 1;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.dropdown {
+  border-width: 1px;
+  border-radius: 0.25rem;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  color: gray;
+  font-weight: 400;
+  margin-top: 0.25rem;
+  height: 2.5rem;
+}
+.imgWrapper {
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+p {
+  color: gray;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    height: 90%;
+    overflow: auto;
+    padding: 10px;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn__profile {
+    margin: auto;
+    width: 50%;
+    padding: 15px 0;
+  }
+}

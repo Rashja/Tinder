@@ -1,0 +1,13 @@
+.container {
+  /* position: fixed; */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* top: 0; */
+  /* right: 0; */
+}
+
+.btnContainer {
+  margin: 10px;
+  width: 150px;
+}

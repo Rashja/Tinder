@@ -1,0 +1,17 @@
+form {
+  width: 90%;
+  height: 90%;
+  padding-bottom: 3rem;
+}
+
+.inputWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.btn__modalCreateAccount {
+  width: 200px;
+  margin: 2rem auto;
+}
+.btn__createAccount {
+  width: 250px;
+}

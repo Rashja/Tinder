@@ -1,0 +1,15 @@
+.label {
+  color: gray;
+  font-weight: 700;
+  flex: 1 1 0%;
+}
+
+.input {
+  border-width: 1px;
+  border-radius: 0.25rem;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+  height: 2.5rem;
+}
