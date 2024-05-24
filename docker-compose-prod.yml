@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  backend:
+    container_name: tinder-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    environment:
+      - MONGODB_CONNECTION_STRING=mongodb+srv://TinderVirtual:kayV56FTaKGMsiA6@tinder.pjccr0j.mongodb.net/
+      - JWT_SECRET_KEY=dsadsid$%@!asd$%^ass1231^%$
+      - FRONTEND_URL=http://localhost:8080
+    ports:
+      - 3000:80
+
+  database:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - tinder:/data/db
+
+  frontend:
+    container_name: tinder-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    environment:
+      - VITE_API_BASE_URL=http://localhost:3000/api/
+    ports:
+      - 8080:80
+    depends_on:
+      - backend
+
+volumes:
+  tinder:

@@ -1,0 +1,30 @@
+FROM node:18.20-alpine as build
+
+WORKDIR /app/backend
+
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm install
+
+COPY . .
+
+# ARG MONGODB_CONNECTION_STRING
+# ARG JWT_SECRET_KEY
+# ARG FRONTEND_URL
+# ENV MONGODB_CONNECTION_STRING=$MONGODB_CONNECTION_STRING
+# ENV JWT_SECRET_KEY=$JWT_SECRET_KEY
+# ENV FRONTEND_URL=$FRONTEND_URL
+
+ENV MONGODB_CONNECTION_STRING=mongodb+srv://TinderVirtual:kayV56FTaKGMsiA6@tinder.pjccr0j.mongodb.net/
+ENV JWT_SECRET_KEY=dsadsid$%@!asd$%^ass1231^%$
+ENV FRONTEND_URL=http://localhost:8080
+
+RUN npm run build:prod
+
+FROM nginx:1.25-alpine
+
+COPY --from=build /app/backend/dist /usr/share/nginx/html
+COPY --from=build /app/backend/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+
