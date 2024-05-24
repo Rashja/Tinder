@@ -21,26 +21,20 @@ export const ComponentWrapper = <TProps extends {}>(
       apiProfileComplete().then((res) => {
         const completeProfile = res.data?.completeProfile;
         if (pathname === ROUTES.HOME) {
-          if (completeProfile) {
-            navigate(ROUTES.EXPLORE);
-          }
-          if (completeProfile === false) {
-            navigate(ROUTES.PROFILE);
-          }
+          if (completeProfile) navigate(ROUTES.EXPLORE);
+          if (completeProfile === false) navigate(ROUTES.PROFILE);
         }
         if (pathname === ROUTES.PROFILE) {
-          if (completeProfile) {
-            navigate(ROUTES.EXPLORE);
-          }
+          if (completeProfile) navigate(ROUTES.EXPLORE);
+
           if (completeProfile === undefined) {
             navigate(ROUTES.HOME);
             Cookies.remove("auth_token");
           }
         }
         if (pathname === ROUTES.EXPLORE) {
-          if (completeProfile === false) {
-            navigate(ROUTES.PROFILE);
-          }
+          if (completeProfile === false) navigate(ROUTES.PROFILE);
+
           if (completeProfile === undefined) {
             navigate(ROUTES.HOME);
             Cookies.remove("auth_token");

@@ -10,7 +10,6 @@ import { ComponentWrapper } from "../../components/componentWrapper/ComponentWra
 const Home = () => {
   const [showModalSignUp, setShowModalSignUp] = useState(false);
   const [showModalSignIn, setShowModalSignIn] = useState(false);
-
   //-------------------------- Modal actions ------------------------//
   const handleOpenSignUp = () => {
     setShowModalSignUp(true);

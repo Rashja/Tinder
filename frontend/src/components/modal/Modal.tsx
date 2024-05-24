@@ -18,11 +18,17 @@ const Modal: React.FC<IModalProps> = ({
 
   return (
     <>
-      <dialog className={styles.container} open={showModal}>
+      <dialog role="dialog" className={styles.container} open={showModal}>
         <span onClick={handleClose}>X</span>
         <div className={styles.wrapper}>{children}</div>
       </dialog>
-      {showModal && <div onClick={handleClose} className={styles.overlay} />}
+      {showModal && (
+        <div
+          data-testid="overlay"
+          onClick={handleClose}
+          className={styles.overlay}
+        />
+      )}
     </>
   );
 };

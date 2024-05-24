@@ -60,7 +60,7 @@ const SignUp: React.FC<ISignUpProps> = ({ closeModal }) => {
   return (
     <>
       <h2>Welcome To Tinder</h2>
-      <form onSubmit={handleSubmit}>
+      <form role="form" onSubmit={handleSubmit}>
         <div className={styles.inputWrapper}>
           <Input
             value={state.email}

@@ -61,10 +61,7 @@ export const apiLogIn = async (email: string, password: string) => {
         error: null,
       };
     } else {
-      return {
-        data: null,
-        error: res?.response?.data?.message,
-      };
+      throw res;
     }
   } catch (error: any) {
     let errorMessage;
