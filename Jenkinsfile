@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Testing') {
             steps {
-               echo "testing.........:D"
+               sh 'npm install'
+               sh 'npm run test'
             }
         }
     }
