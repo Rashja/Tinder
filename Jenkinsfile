@@ -1,15 +1,23 @@
 pipeline {
     agent {
         docker {
-            image 'node:18.20-alpine' 
+            image 'node:18.20-alpine'
             args '-p 3000:3000'
         }
     }
     stages {
-        stage('Testing') {
+        stage('Install Frontend Dependencies') {
             steps {
-                sh 'npm install'
-                sh 'npm run test'
+                dir('frontend') {
+                    sh 'npm install'
+                }
+            }
+        }
+        stage('Test Frontend') {
+            steps {
+                dir('frontend') {
+                    sh 'npm run test'
+                }
             }
         }
     }
